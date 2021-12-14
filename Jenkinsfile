@@ -26,5 +26,12 @@ pipeline {
       }
     }
 
+    stage('Deploy in staging') {
+      steps {
+        echo 'Deploy to staging environment'
+        input 'Is it OK to deploy to production?'
+      }
+    }
+
   }
 }
