@@ -8,18 +8,18 @@ pipeline {
       }
     }
 
-    stage('Tests Stage') {
+    stage('Linux Tests Stage') {
       parallel {
-        stage('Step Linux Tests') {
+        stage('Linux Tests Stage') {
           steps {
             echo 'Erik Step para Run linux tests'
             bat(script: 'run_linux_tests.sh', encoding: 'UTF-8', label: 'Step del tests stage', returnStatus: true)
           }
         }
 
-        stage('Step Windows Tests') {
+        stage('Windows Test Stage') {
           steps {
-            echo 'Erik Run Windows tests'
+            echo 'Erik Run windows tests'
           }
         }
 
