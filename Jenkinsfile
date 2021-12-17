@@ -33,5 +33,11 @@ pipeline {
       }
     }
 
+    stage('Deploy to PROD') {
+      steps {
+        echo 'Erik deploy to PROD'
+      }
+    }
+
   }
 }
