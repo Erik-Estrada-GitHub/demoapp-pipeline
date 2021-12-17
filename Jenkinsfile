@@ -40,4 +40,14 @@ pipeline {
     }
 
   }
+  post {
+    always {
+      archiveArtifacts(artifacts: 'target/demoapp.jar', fingerprint: true)
+    }
+
+    failure {
+      mail(to: 'erik.estrada.job@hotmail.com', subject: "Erik Failed Pipeline ${currentBuild.fullDisplayName}", body: " For details about the failure, see ${env.BUILD_URL}")
+    }
+
+  }
 }
